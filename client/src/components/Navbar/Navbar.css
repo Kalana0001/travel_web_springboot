@@ -1,0 +1,133 @@
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  
+  .nav__logo img {
+    max-width: 70px;
+  }
+  
+  .nav__links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .land_nav {
+    top: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10; 
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+  }
+  .link a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--white);
+  }
+  
+  .search {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--white);
+    border-radius: 2rem;
+    transition: 0.3s;
+  }
+  
+  .search input {
+    width: 100%;
+    font-size: 1rem;
+    color: var(--primary-color);
+    outline: none;
+    border: none;
+  }
+  
+  .search input::placeholder {
+    color: var(--secondary-color);
+  }
+  
+  .search span {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+  }
+  
+  .login {
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 600;
+    color: var(--white);
+    background-color: var(--primary-color);
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .login:hover {
+    background-color: var(--secondary-color);
+  }
+  
+  .login span {
+    padding: 5px 8px;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    background-color: var(--white);
+    border-radius: 100%;
+  }
+
+  @media (width < 1200px) {
+    .search {
+      max-width: 235px;
+    }
+  
+    .destination__container {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (width < 900px) {
+    .nav__links {
+      display: none;
+    }
+  
+    .content h1 {
+      font-size: 4rem;
+    }
+  
+    .destination__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (width < 600px) {
+    .search {
+      display: none;
+    }
+  
+    .destination__container {
+      padding-left: 3rem;
+    }
+  
+    .content h1 {
+      font-size: 3rem;
+    }
+  
+    .destination__grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
