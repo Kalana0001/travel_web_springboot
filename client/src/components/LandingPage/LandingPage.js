@@ -48,7 +48,6 @@ const LandingPage = () => {
                 Discover off-the-beaten-path locations and hidden gems within
                 dream destinations, taking you beyond the typical tourist spots.
               </p>
-              <button class="btn">Read More</button>
             </div>
           </div>
           <div class="destination__card">
@@ -60,7 +59,6 @@ const LandingPage = () => {
                 showcasing the rituals, traditions, and local customs that make
                 these places truly unique.
               </p>
-              <button class="btn">Read More</button>
             </div>
           </div>
           <div class="destination__card">
@@ -72,7 +70,6 @@ const LandingPage = () => {
                 your trip is optimized, and make the most of time in your
                 long-awaited dream location.
               </p>
-              <button class="btn">Read More</button>
             </div>
           </div>
         </div>

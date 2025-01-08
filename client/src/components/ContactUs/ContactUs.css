@@ -1,0 +1,116 @@
+.contact__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh;
+  }
+  
+  .contact {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .contact_heading {
+    text-align: center;
+    padding: 2.5rem 0;
+  }
+  
+  .contact_heading span {
+    font-size: 3rem;
+    background: rgba(255, 165, 0, 0.2);
+    color: #ffa500;
+    border-radius: 0.5rem;
+    padding: 0.2rem 1rem;
+    margin: 0 5px 0 0;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  .contact_heading span.space {
+    background: none;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .contact_image {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .contact_image img {
+    width: 500px;
+    height: auto;
+  }
+  
+  .contact_form {
+    flex: 1 10rem;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin-left: 100px;
+  }
+  
+  .contact_form .inputBox {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 20px; /* Spacing between inputs */
+    margin-bottom: 20px;
+  }
+  
+  .contact_form .inputBox input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    outline: none;
+    border-radius: 8px;
+    color: #333;
+    background: linear-gradient(135deg, #f0f0f07c, #e0e0e049);
+    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  
+  .contact_form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    background: linear-gradient(135deg, #f0f0f07c, #e0e0e049);
+    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #333;
+    margin-bottom: 20px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  
+  .contact_form .btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .contact_form .btn:hover {
+    background: linear-gradient(135deg, #0056b3, #003d82);
+    transform: scale(1.05);
+  }
+  
+  .contact_form .btn:active {
+    transform: scale(0.95);
+  }
+  
