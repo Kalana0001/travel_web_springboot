@@ -1,17 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
-import LandingPage from './components/LandingPage/LandingPage';
 import ImageSlider from './components/ImageSlider/ImageSlider';
-import AboutUs from './components/AboutUs/AboutUs';
-import ContactUs from './components/ContactUs/ContactUs';
+import AboutUs from './Pages/AboutUs/AboutUs';
+import LandingPage from './Pages/LandingPage/LandingPage';
+import ContactUs from './Pages/ContactUs/ContactUs';
+import HomePackages from './Pages/HomePackages/HomePackages';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
     <div className="App">
       <LandingPage />
       <AboutUs/>
+      <HomePackages/>
       <ImageSlider/>
       <ContactUs/>
+      <Footer/>
     </div>
   );
 }

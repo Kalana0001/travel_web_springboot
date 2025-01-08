@@ -10,7 +10,8 @@ import { FaTwitterSquare } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
-import Navbar from '../Navbar/Navbar';
+import Navbar from '../../components/Navbar/Navbar';
+
 
 const LandingPage = () => {
   return (
