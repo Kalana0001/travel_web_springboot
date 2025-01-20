@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import './AddPackages.css'; // Optional: Styling for the popup modal
+import './AddPackages.css';
 
 const AddPackages = ({ closeModal }) => {
   const [file, setFile] = useState(null);
