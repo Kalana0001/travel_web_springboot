@@ -1,7 +1,6 @@
 import React from 'react'
 import './HomePackages.css';
 import Cards1 from '../../components/Cards1/Cards1';
-import Cards2 from '../../components/Cards2/Cards2';
 
 
 const HomePackages = () => {
@@ -15,7 +14,6 @@ const HomePackages = () => {
           find your right destination.
         </p>
         <Cards1 />
-        <Cards2 />
         <div class="view__all">
           <button class="package1_btn">View All</button>
         </div>
