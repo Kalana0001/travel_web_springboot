@@ -1,10 +1,8 @@
 import React from 'react'
 import './LandingPage.css';
-import img2 from '../../assets/bg-dots.png';
-import img3 from '../../assets/bg-arrow.png';
-import img4 from '../../assets/destination-1.jpg';
-import img5 from '../../assets/destination-2.jpg';
-import img6 from '../../assets/destination-3.jpg';
+import img4 from '../../assets/destination_4.jpg';
+import img5 from '../../assets/destination_2.jpg';
+import img6 from '../../assets/destination_3.jpg';
 import video1 from '../../assets/video-bg5.mp4';
 import { FaTwitterSquare } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa6";
@@ -23,8 +21,6 @@ const LandingPage = () => {
     <div class="container">
         <Navbar />
       <div class="destination__container">
-        <img class="bg__img__1" src={img2} alt="bg" />
-        <img class="bg__img__2" src={img3} alt="bg" />
         <div class="socials">
           <span><i class="ri-twitter-fill"></i><FaTwitterSquare /></span>
           <span><i class="ri-facebook-fill"></i><FaFacebookF /></span>

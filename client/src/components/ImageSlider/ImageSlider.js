@@ -59,74 +59,84 @@ const ImageSlider = () => {
       <div ref={slideRef} className="slide">
         <div
           className="item"
-          style={{ backgroundImage: `url('https://i.ibb.co/qCkd9jS/img1.jpg')` }}
-        >
+          style={{ backgroundImage: `url('https://cdn.pixabay.com/photo/2023/11/16/05/02/mountains-8391433_960_720.jpg')` }}>
           <div className="imgcontent">
             <div className="name">Switzerland</div>
             <div className="des">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!
             </div>
-            <button>See More</button>
+            <button>Explore</button>
           </div>
         </div>
         <div
           className="item"
-          style={{ backgroundImage: `url('https://i.ibb.co/jrRb11q/img2.jpg')` }}
+          style={{ backgroundImage: `url('https://cdn.pixabay.com/photo/2020/04/03/14/05/african-elephant-4999036_960_720.jpg')` }}>
+          <div className="imgcontent">
+            <div className="name">Africa</div>
+            <div className="des">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!
+            </div>
+            <button>Explore</button>
+          </div>
+        </div>
+        <div
+          className="item"
+          style={{ backgroundImage: `url('https://cdn.pixabay.com/photo/2021/09/13/09/23/trees-6620725_960_720.jpg')` }}
         >
           <div className="imgcontent">
             <div className="name">Finland</div>
             <div className="des">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!
             </div>
-            <button>See More</button>
+            <button>Explore</button>
           </div>
         </div>
         <div
           className="item"
-          style={{ backgroundImage: `url('https://i.ibb.co/NSwVv8D/img3.jpg')` }}
+          style={{ backgroundImage: `url('https://cdn.pixabay.com/photo/2017/03/02/16/54/iceland-2111811_1280.jpg')` }}
         >
           <div className="imgcontent">
             <div className="name">Iceland</div>
             <div className="des">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!
             </div>
-            <button>See More</button>
+            <button>Explore</button>
           </div>
         </div>
         <div
           className="item"
-          style={{ backgroundImage: `url('https://i.ibb.co/Bq4Q0M8/img4.jpg')` }}
+          style={{ backgroundImage: `url('https://cdn.pixabay.com/photo/2022/05/30/23/35/kangaroo-7232440_1280.jpg')` }}
         >
           <div className="imgcontent">
             <div className="name">Australia</div>
             <div className="des">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!
             </div>
-            <button>See More</button>
+            <button>Explore</button>
           </div>
         </div>
         <div
           className="item"
-          style={{ backgroundImage: `url('https://i.ibb.co/jTQfmTq/img5.jpg')` }}
+          style={{ backgroundImage: `url('https://cdn.pixabay.com/photo/2020/11/04/19/22/old-windmill-5713337_1280.jpg')` }}
         >
           <div className="imgcontent">
             <div className="name">Netherland</div>
             <div className="des">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!
             </div>
-            <button>See More</button>
+            <button>Explore</button>
           </div>
         </div>
         <div
           className="item"
-          style={{ backgroundImage: `url('https://i.ibb.co/RNkk6L0/img6.jpg')` }}
+          style={{ backgroundImage: `url('https://cdn.pixabay.com/photo/2017/05/15/14/24/ireland-2314998_1280.jpg')` }}
         >
           <div className="imgcontent">
             <div className="name">Ireland</div>
             <div className="des">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!
             </div>
-            <button>See More</button>
+            <button>Explore</button>
           </div>
         </div>
       </div>
@@ -151,7 +161,7 @@ const ImageSlider = () => {
               Explore your suitable and dream places around the world. Here you
               can find your right destination.
             </p>
-            <button class="btn">View All</button>
+            <button class="btn">Book Now</button>
           </div>
         </div>
       </div>

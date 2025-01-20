@@ -5,6 +5,7 @@ import LandingPage from './Pages/LandingPage/LandingPage';
 import ContactUs from './Pages/ContactUs/ContactUs';
 import HomePackages from './Pages/HomePackages/HomePackages';
 import Footer from './components/Footer/Footer';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (

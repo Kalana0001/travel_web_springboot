@@ -1,6 +1,6 @@
 import React from 'react'
 import './AboutUs.css'
-import img1 from '../../assets/choose.jpg'
+import img1 from '../../assets/tiger_01.jpg'
 import { IoTicketSharp } from "react-icons/io5";
 import { FaMapMarkedAlt } from "react-icons/fa";
 import { GiPriceTag } from "react-icons/gi";
