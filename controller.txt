@@ -1,0 +1,189 @@
+package com.example.backend.controller; 
+
+import com.example.backend.entity.Image;
+import com.example.backend.repository.ImageRepository;
+import com.example.backend.util.ImageUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+
+@RestController
+@RequestMapping("api/images")
+@CrossOrigin("*")
+public class ImageController {
+
+    @Autowired
+    private final ImageRepository imageRepository;
+
+    public ImageController(ImageRepository imageRepository) {
+        this.imageRepository = imageRepository;
+    }
+
+    @PostMapping("/addImage")
+    public ResponseEntity<String> saveImage(
+            @RequestParam("file") MultipartFile[] files,
+            @RequestParam("placeName") String placeName,
+            @RequestParam("country") String country,
+            @RequestParam("price") Double price
+    ) {
+        String uploadDir = "ImageFolder";
+        try {
+            Arrays.stream(files).forEach(file -> {
+                String fileName = StringUtils.cleanPath(Objects.requireNonNull(file.getOriginalFilename()));
+                try {
+                    // Save file to disk
+                    ImageUtil.saveFile(uploadDir, fileName, file);
+
+                    // Save file details to database
+                    Image image = new Image();
+                    image.setFileName(fileName);
+                    image.setUploadDir(uploadDir);
+                    image.setPlaceName(placeName);
+                    image.setCountry(country);
+                    image.setPrice(price);
+                    imageRepository.save(image);
+
+                } catch (IOException e) {
+                    throw new RuntimeException("Could not save file: " + fileName, e);
+                }
+            });
+            return ResponseEntity.ok("Files uploaded and saved to database successfully!");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error uploading files: " + e.getMessage());
+        }
+    }
+
+
+    @GetMapping("/getAll")
+    public ResponseEntity<List<Image>> getAllImages() {
+        List<Image> images = imageRepository.findAll();
+        return ResponseEntity.ok(images);
+    }
+
+    // Serve image dynamically
+    @GetMapping("/image/{fileName}")
+    public ResponseEntity<Resource> getImage(@PathVariable String fileName) {
+        try {
+            Path filePath = Paths.get("D:\\My Projects\\Spring Boot 1\\backend\\src\\main\\resources\\static\\ImageFolder")
+                    .resolve(fileName).normalize();
+            Resource resource = new UrlResource(filePath.toUri());
+
+            if (resource.exists()) {
+                return ResponseEntity.ok()
+                        .contentType(MediaType.IMAGE_JPEG) // You can change this based on the image type
+                        .body(resource);
+            } else {
+                return ResponseEntity.notFound().build();
+            }
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
+
+    @PutMapping("/update/{id}")
+    public ResponseEntity<?> updateImage(
+            @PathVariable Long id,
+//            @RequestBody
+            @RequestParam(value = "file", required = false) MultipartFile file,
+            @RequestParam(value = "placeName", required = false) String placeName,
+            @RequestParam(value = "country", required = false) String country,
+            @RequestParam(value = "price", required = false) Double price
+    ) {
+        Optional<Image> optionalImage = imageRepository.findById(id);
+
+        if (!optionalImage.isPresent()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Image with ID " + id + " not found.");
+        }
+
+        Image image = optionalImage.get();
+
+        // Update the file if provided
+        if (file != null && !file.isEmpty()) {
+            String fileName = file.getOriginalFilename();
+            try {
+                ImageUtil.saveFile("uploads", fileName, file);
+                image.setFileName(fileName);
+                image.setUploadDir("uploads");
+            } catch (IOException e) {
+                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                        .body("Failed to upload file: " + e.getMessage());
+            }
+        }
+
+        // Update other fields if provided
+        if (placeName != null) {
+            image.setPlaceName(placeName);
+        }
+        if (country != null) {
+            image.setCountry(country);
+        }
+        if (price != null) {
+            image.setPrice(price);
+        }
+
+        // Save the updated image
+        Image updatedImage = imageRepository.save(image);
+
+        return ResponseEntity.ok(updatedImage);
+    }
+
+    @GetMapping("/get/{id}")
+    public ResponseEntity<Image> getImageById(@PathVariable Long id) {
+        Optional<Image> image = imageRepository.findById(id);
+
+        if (!image.isPresent()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
+
+        return ResponseEntity.ok(image.get());
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deleteImage(@PathVariable Long id) {
+        try {
+            Optional<Image> imageOptional = imageRepository.findById(id);
+            if (imageOptional.isPresent()) {
+                // Delete the image from the database
+                imageRepository.delete(imageOptional.get());
+
+                // Optionally, you can also delete the file from the server's storage
+                String fileName = imageOptional.get().getFileName();
+                Path filePath = Paths.get("D:\\My Projects\\Spring Boot 1\\backend\\src\\main\\resources\\static\\ImageFolder")
+                        .resolve(fileName).normalize();
+                java.io.File fileToDelete = filePath.toFile();
+
+                if (fileToDelete.exists()) {
+                    if (fileToDelete.delete()) {
+                        return ResponseEntity.ok("Image and associated file deleted successfully.");
+                    } else {
+                        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                                .body("Image deleted from database, but file deletion failed.");
+                    }
+                } else {
+                    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                            .body("Image deleted from database, but file not found.");
+                }
+            } else {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Image with ID " + id + " not found.");
+            }
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error deleting image: " + e.getMessage());
+        }
+    }
+
+}

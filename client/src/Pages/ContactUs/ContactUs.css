@@ -94,19 +94,19 @@
   }
   
   .contact_form .btn {
-    display: inline-block;
-    background: linear-gradient(135deg, #007bff, #0056b3);
-    color: #fff;
+    padding: 0.75rem 2rem;
+    outline: none;
     border: none;
-    padding: 12px 24px;
-    border-radius: 8px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #108a88;
+    border-radius: 5rem;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease-in-out;
   }
   
   .contact_form .btn:hover {
-    background: linear-gradient(135deg, #0056b3, #003d82);
+    background: #017479;
     transform: scale(1.05);
   }
   

@@ -1,7 +1,7 @@
-package com.example.backend.controller;
+package com.example.spring_backend.controller;
 
-import com.example.backend.entity.Image;
-import com.example.backend.service.ImageService;
+import com.example.spring_backend.entity.Image;
+import com.example.spring_backend.service.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;

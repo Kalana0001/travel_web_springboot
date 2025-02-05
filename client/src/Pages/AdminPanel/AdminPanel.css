@@ -360,9 +360,9 @@ nav .sidebar-button i{
   color: #1abc9c;
 }
 
-/* Adjust Home Section to Account for Navbar */
+
 .home-section {
-  margin-top: 60px; /* Push content below navbar */
+  margin-top: 60px; 
   padding: 20px;
 }
 

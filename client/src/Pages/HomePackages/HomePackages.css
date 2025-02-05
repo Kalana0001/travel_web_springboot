@@ -25,14 +25,15 @@
   border: none;
   font-size: 1rem;
   color: #ffffff;
-  background-color: #3685fb;
+  background-color: #108a88;
   border-radius: 5rem;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease-in-out;
 }
 
 .package1_btn:hover {
-  background-color: #2f73d9;
+  background-color:#017479;
+  transform: scale(1.05);
 }
 
 .package1_img {

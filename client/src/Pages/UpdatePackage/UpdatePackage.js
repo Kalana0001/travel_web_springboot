@@ -15,7 +15,7 @@ const UpdatePackage = ({ closeModal, imageId }) => {
           const response = await axios.get(`http://localhost:8080/api/images/get/${imageId}`);
           setImageData(response.data);
         } catch (err) {
-          setError("Failed to fetch image data.");
+          setError("Failed to fetch package data.");
           console.error(err);
         }
       };
@@ -50,7 +50,7 @@ const UpdatePackage = ({ closeModal, imageId }) => {
           "Content-Type": "multipart/form-data",
         },
       });
-      setSuccessMessage("Image updated successfully!");
+      setSuccessMessage("Pckage updated successfully!");
       setError(null);
     } catch (err) {
       setError("Failed to update image. Please try again.");

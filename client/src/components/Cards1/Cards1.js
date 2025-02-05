@@ -6,7 +6,6 @@ const Cards1 = () => {
   const [images, setImages] = useState([]);
   const [error, setError] = useState(null);
 
-  // Fetch trips data from the API
   useEffect(() => {
     const fetchImages = async () => {
       try {

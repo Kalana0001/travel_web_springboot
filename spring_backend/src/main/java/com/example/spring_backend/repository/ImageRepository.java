@@ -1,6 +1,6 @@
-package com.example.backend.repository;
+package com.example.spring_backend.repository;
 
-import com.example.backend.entity.Image;
+import com.example.spring_backend.entity.Image;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

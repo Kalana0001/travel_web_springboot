@@ -1,6 +1,20 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const AdminNav = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    const confirmLogout = window.confirm("Are you sure you want to logout?");
+
+    if (confirmLogout) {
+      const token = localStorage.getItem('authToken');
+      console.log("Current Auth Token:", token);
+      localStorage.removeItem('authToken');
+      navigate('/adminlogin');
+    }
+  };
+
   return (
     <div>
       <nav className="top-navbar">
@@ -9,9 +23,7 @@ const AdminNav = () => {
           <span className="nav-title">Admin Dashboard</span>
         </div>
         <div className="nav-right">
-          <a href="#" className="nav-link">Home</a>
-          <a href="#" className="nav-link">About</a>
-          <a href="#" className="nav-link">Contact</a>
+          <button className="delete-btn" onClick={handleLogout}>Logout</button>
         </div>
       </nav>
     </div>

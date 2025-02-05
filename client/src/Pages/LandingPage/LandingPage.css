@@ -144,12 +144,16 @@ body, html {
   font-size: 1rem;
   font-weight: 600;
   color: var(--white);
-  background-color: var(--secondary-color);
+  background-color: #108a88;
   cursor: pointer;
   align-items: start;
   display: block;
+  transition: all 0.3s ease-in-out;
 }
-
+.btn:hover {
+  background-color:#017479;
+  transform: scale(1.05);
+}
 .destination__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

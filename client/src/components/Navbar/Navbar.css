@@ -66,20 +66,21 @@ nav {
   }
   
   .login {
-    padding: 0.5rem 1rem;
+    padding: 0.3rem 1rem;
     display: flex;
     align-items: center;
     gap: 1rem;
-    font-weight: 600;
+    font-weight: 550;
     color: var(--white);
-    background-color: var(--primary-color);
+    background-color: #108a88;
     border-radius: 2rem;
     cursor: pointer;
-    transition: 0.3s;
+    transition: all 0.3s ease-in-out;
   }
   
   .login:hover {
-    background-color: var(--secondary-color);
+    background-color:#017479;
+    transform: scale(1.05);
   }
   
   .login span {

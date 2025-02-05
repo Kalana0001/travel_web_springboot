@@ -161,7 +161,7 @@ const ImageSlider = () => {
               Explore your suitable and dream places around the world. Here you
               can find your right destination.
             </p>
-            <button class="btn">Book Now</button>
+            <button class="slider_btn">Book Now</button>
           </div>
         </div>
       </div>

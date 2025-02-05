@@ -189,21 +189,20 @@
     color: var(--text-dark);
     max-width: calc(var(--max-width) / 2);
   }
-  
-  .btn {
+  .slider_btn{
     padding: 0.75rem 2rem;
     outline: none;
     border: none;
     font-size: 1rem;
-    color: var(--extra-light);
-    background-color: var(--primary-color);
+    color: white;
+    background-color: #108a88;
     border-radius: 5rem;
     cursor: pointer;
-    transition: 0.3s;
+    transition: all 0.3s ease-in-out;
   }
-  
-  .btn:hover {
-    background-color: var(--primary-color-dark);
+  .slider_btn:hover {
+    background-color:#017479;
+    transform: scale(1.05);
   }
   .gallary__details{
     text-align: left;
